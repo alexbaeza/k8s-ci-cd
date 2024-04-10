@@ -1,4 +1,4 @@
-name: Test & Build
+name: Test & Build Docker Image
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build_and_push:
-    name: Build & Publish Docker Images
+    name: Build Docker Image
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
