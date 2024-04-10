@@ -4,7 +4,7 @@
   "description": "This all-in-one Docker image is designed to provide a minimal environment with all the necessary tools for a CI/CD deployment in Kubernetes, no more installing tools on your ci/cd workflows.",
   "scripts": {
     "release": "semantic-release",
-    "release:dry": "semantic-release --no-ci --dry-run --branches=${BRANCH_NAME:-main}"
+    "release:dry": "semantic-release --no-ci --dry-run"
   },
   "repository": {
     "type": "git",
@@ -18,23 +18,30 @@
   },
   "homepage": "https://github.com/alexbaeza/k8s-ci-cd#readme",
   "devDependencies": {
+    "semantic-release": "^23.0.8",
     "@codedependant/semantic-release-docker": "^5.0.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^12.0.0",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^10.0.3",
-    "@semantic-release/release-notes-generator": "^13.0.0"
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "semantic-release-docker-buildx": "^1.0.1"
   },
   "release": {
     "branches": [
-      "+([0-9])?(.{+([0-9]),x}).x",
       "main"
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
       [
         "@semantic-release/git",
         {
@@ -45,21 +52,33 @@
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ],
-      "@semantic-release/github",
+      "semantic-release-docker-buildx",
       [
-        "@codedependant/semantic-release-docker", {
-        "dockerProject": "betterdev",
-        "dockerPlatform": [
-          "linux/amd64", "linux/arm64"
+        "@semantic-release/github",
+        {
+          "addReleases": "bottom"
+        }
+      ]
+    ],
+    "publish": [
+      {
+        "path": "semantic-release-docker-buildx",
+        "buildArgs": {
+          "COMMIT_TAG": "$GIT_SHA"
+        },
+        "imageNames": [
+          "fallenbagel/jellyseerr"
         ],
-        "dockerImage": "k8s-ci-cd",
-        "dockerTags": [
-          "{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-          "{{major}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-          "{{major}}.{{minor}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
-          "{{version}}"
+        "platforms": [
+          "linux/amd64",
+          "linux/arm64",
+          "linux/arm/v7"
         ]
-      }]
+      },
+      "@semantic-release/github"
     ]
+  },
+  "dependencies": {
+    "semantic-release": "^23.0.8"
   }
 }

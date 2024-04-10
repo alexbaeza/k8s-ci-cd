@@ -1,0 +1,43 @@
+name: Test & Build
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    name: Lint & Test Build
+    runs-on: ubuntu-22.04
+    container: node:18.18-alpine
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: yarn
+      - name: Lint
+        run: yarn lint
+      - name: Formatting
+        run: yarn format:check
+      - name: Build
+        run: yarn build
+
+  build_and_push:
+    name: Build & Publish Docker Images
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build Only
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          push: false
