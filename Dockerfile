@@ -20,7 +20,7 @@ SHELL ["/bin/bash", "-c"]
 # If ARCH is needed use '{INJECT_ARCH}' to let the script inject the value into the urls
 
 #Install kubectl
-RUN ./binary_installer.sh kubectl binary "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/{INJECT_ARCH}/kubectl" /usr/bin/ help --debug
+RUN ./binary_installer.sh kubectl binary "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/{INJECT_ARCH}/kubectl" /usr/bin/ help
 ## Install kubectlxtra (wrapper)
 RUN ./binary_installer.sh kubectlxtra binary "https://github.com/alexbaeza/kubectlxtra/raw/main/kubectlxtra.sh" /usr/bin/ help
 ## Install kustomize
@@ -30,6 +30,6 @@ RUN ./binary_installer.sh opkustomize binary "https://github.com/alexbaeza/opkus
 ## Install Helm
 RUN ./binary_installer.sh helm tar "https://get.helm.sh/helm-v${HELM_VERSION}-linux-{INJECT_ARCH}.tar.gz" /usr/bin/ "version"
 ## Install kubeconform
-RUN ./binary_installer.sh kubeconform tar "https://github.com/yannh/kubeconform/releases/download/v${KUBECONFORM_VERSION}/kubeconform-linux-{INJECT_ARCH}.tar.gz" /usr/bin/ "-v" --debug
+RUN ./binary_installer.sh kubeconform tar "https://github.com/yannh/kubeconform/releases/download/v${KUBECONFORM_VERSION}/kubeconform-linux-{INJECT_ARCH}.tar.gz" /usr/bin/ "-v"
 
 WORKDIR /apps
