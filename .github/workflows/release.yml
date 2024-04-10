@@ -17,6 +17,8 @@ jobs:
 
       - name: Setup node
         uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Install Dependencies
         run: npm install
@@ -34,7 +36,7 @@ jobs:
 
   release:
     name: Release
-    needs: dependencies
+    needs: test
     if: ${{ github.ref_name == 'main' && github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
@@ -43,6 +45,8 @@ jobs:
 
       - name: Setup node
         uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Install Dependencies
         run: npm install
