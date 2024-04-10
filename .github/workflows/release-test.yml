@@ -1,12 +1,12 @@
-name: Release
+name: Test Release
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 jobs:
-  release:
-    name: Release
+  test:
+    name: Test Release (Dry Run)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,8 +20,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Publish
-        run: npm run release
+      - name: Publish (Dry Run)
+        run: npm run release:dry
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: 'GitHub Actions [Bot]'
