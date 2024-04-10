@@ -1,0 +1,65 @@
+{
+  "name": "k8s-ci-cd",
+  "version": "1.0.0",
+  "description": "This all-in-one Docker image is designed to provide a minimal environment with all the necessary tools for a CI/CD deployment in Kubernetes, no more installing tools on your ci/cd workflows.",
+  "scripts": {
+    "release": "semantic-release",
+    "release:dry": "semantic-release --no-ci --dry-run --branches=${BRANCH_NAME:-main}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alexbaeza/k8s-ci-cd.git"
+  },
+  "keywords": [],
+  "author": "alexbaeza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexbaeza/k8s-ci-cd/issues"
+  },
+  "homepage": "https://github.com/alexbaeza/k8s-ci-cd#readme",
+  "devDependencies": {
+    "@codedependant/semantic-release-docker": "^5.0.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.3",
+    "@semantic-release/release-notes-generator": "^13.0.0"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github",
+      [
+        "@codedependant/semantic-release-docker", {
+        "dockerProject": "betterdev",
+        "dockerPlatform": [
+          "linux/amd64", "linux/arm64"
+        ],
+        "dockerImage": "k8s-ci-cd",
+        "dockerTags": [
+          "{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
+          "{{major}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
+          "{{major}}.{{minor}}-{{#if prerelease.[0]}}{{prerelease.[0]}}{{else}}latest{{/if}}",
+          "{{version}}"
+        ]
+      }]
+    ]
+  }
+}

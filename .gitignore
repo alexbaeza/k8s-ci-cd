@@ -38,3 +38,6 @@ temp/
 
 #VScode
 .vscode
+
+#node
+node_modules
