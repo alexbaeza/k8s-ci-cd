@@ -34,7 +34,7 @@ jobs:
 
   release:
     name: Release
-    needs: dependencies
+    needs: test
     if: ${{ github.ref_name == 'main' && github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
