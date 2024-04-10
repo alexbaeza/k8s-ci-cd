@@ -24,7 +24,7 @@ docker pull betterdev/k8s-ci-cd:latest
 
 2. executing Bash Shell in Container
 
-To open a Bash shell within the container, you can use the following command:
+To open a bash shell within the container:
 
 ```shell
 docker run -it betterdev/k8s-ci-cd bash
@@ -65,7 +65,7 @@ If you want to build this image from source, ensure you have Docker installed an
 3. Build the Docker image using the following command:
 
 ```bash
-docker build -t <image_name>:<tag> .
+docker build -t <image_name> .
 ```
 
 ### Selecting Tool Versions
