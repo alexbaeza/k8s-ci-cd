@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.0...v1.1.1) (2024-04-13)
+
+
+### Bug Fixes
+
+* **enhancement:** Exclude node_modules ([690c9c6](https://github.com/alexbaeza/k8s-ci-cd/commit/690c9c60d30e1f50ab5023168874ec7da7d7c352))
+
 # [1.1.0](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.0.0...v1.1.0) (2024-04-13)
 
 
