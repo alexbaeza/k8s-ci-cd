@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.0.0...v1.1.0) (2024-04-13)
+
+
+### Features
+
+* **enhancement:** Add versioning for kubectlxtra and opkustomize ([#10](https://github.com/alexbaeza/k8s-ci-cd/issues/10)) ([7dba2ef](https://github.com/alexbaeza/k8s-ci-cd/commit/7dba2efadd49b822f3c409a9cf429757af576852))
+
 # 1.0.0 (2024-04-13)
 
 
