@@ -12,3 +12,6 @@
 
 #files
 release.config.js
+
+#node
+node_modules
