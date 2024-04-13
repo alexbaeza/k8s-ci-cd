@@ -1,0 +1,14 @@
+# git
+.git
+.gitattributes
+.gitignore
+.github
+
+#IDEA
+.idea
+
+#VScode
+.vscode
+
+#files
+release.config.js

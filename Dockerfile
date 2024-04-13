@@ -24,7 +24,7 @@ SHELL ["/bin/bash", "-c"]
 #Install kubectl
 RUN ./binary_installer.sh kubectl binary "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/{INJECT_ARCH}/kubectl" /usr/bin/ help
 ## Install kubectlxtra (wrapper)
-RUN ./binary_installer.sh kubectlxtra binary "https://raw.githubusercontent.com/alexbaeza/opkustomize/v${KUBECTLXTRA_VERSION}/kubectlxtra.sh" /usr/bin/ help
+RUN ./binary_installer.sh kubectlxtra binary "https://raw.githubusercontent.com/alexbaeza/kubectlxtra/v${KUBECTLXTRA_VERSION}/kubectlxtra.sh" /usr/bin/ help
 ## Install kustomize
 RUN ./binary_installer.sh kustomize tar "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv${KUSTOMIZE_VERSION}/kustomize_v${KUSTOMIZE_VERSION}_linux_{INJECT_ARCH}.tar.gz" /usr/bin/ version
 ## Install opkustomize (wrapper)
