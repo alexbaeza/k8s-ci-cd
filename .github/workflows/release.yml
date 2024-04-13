@@ -8,17 +8,15 @@ jobs:
   semantic-release:
     name: Tag and release latest version
     runs-on: ubuntu-22.04
-    env:
-      HUSKY: 0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Set up Node.js
+      - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 14
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -28,11 +26,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_REGISTRY_USER }}
           password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-      - name: Install dependencies
-        run: yarn
-      - name: Release
+      - name: Execute Semantic Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_REGISTRY_USER }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
-        run: yarn release
+        with:
+          semantic_version: 17
+          extra_plugins: |
+            "@semantic-release/commit-analyzer"
+            "@semantic-release/release-notes-generator"
+            "@semantic-release/github"
+            "@semantic-release/git"
+            "semantic-release-docker-buildx"
