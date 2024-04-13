@@ -1,7 +1,15 @@
+<div style="text-align: center" align="center">
+
 # All-in-one Kubernetes CI/CD Docker Image
 
-This all-in-one Docker image is designed to provide a minimal environment with all the necessary tools for a CI/CD
-deployment in Kubernetes, no more installing tools on your ci/cd workflows.
+> This all-in-one Docker image is designed to provide a minimal environment with all the necessary tools for a CI/CD
+> deployment in Kubernetes, no more installing tools on your ci/cd workflows.
+
+[![Commits](https://img.shields.io/github/commit-activity/w/alexbaeza/k8s-ci-cd?style=flat)](https://github.com/alexbaeza/k8s-ci-cd/pulse)
+[![Issues](https://img.shields.io/github/issues/alexbaeza/k8s-ci-cd.svg?style=flat)](https://github.com/alexbaeza/k8s-ci-cd/issues)
+[![Releases](https://img.shields.io/github/v/release/alexbaeza/k8s-ci-cd.svg?style=flat)](https://github.com/alexbaeza/k8s-ci-cd/releases)
+
+</div>
 
 ## Tools Included
 
