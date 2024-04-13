@@ -1,11 +1,3 @@
-# [1.2.0](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.3...v1.2.0) (2024-04-13)
-
-
-### Features
-
-* **1 password cli:** Add 1 password cli ([e9434fd](https://github.com/alexbaeza/k8s-ci-cd/commit/e9434fdfd2b942dbf2a5215e062b1ed58b14468a))
-* **1 password cli:** Add 1 password cli ([07ca238](https://github.com/alexbaeza/k8s-ci-cd/commit/07ca238649f0611e424dcbd89c1253494aa81e83))
-
 ## [1.1.3](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.2...v1.1.3) (2024-04-13)
 
 
@@ -19,7 +11,6 @@
 ### Bug Fixes
 
 * **dependency:** Upgrade default opkustomize version to v1.2.1 ([2142215](https://github.com/alexbaeza/k8s-ci-cd/commit/2142215ac338225eacb6cf6f79f04473bf212c29))
-* **dependency:** Upgrade default opkustomize version to v1.2.2 ([22e16bf](https://github.com/alexbaeza/k8s-ci-cd/commit/22e16bf446facebddc5a581e086ec636a85064d8))
 
 ## [1.1.1](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.0...v1.1.1) (2024-04-13)
 
