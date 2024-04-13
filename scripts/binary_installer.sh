@@ -115,6 +115,15 @@ install_binary() {
     curl -sLO "$RELEASE_URL"
     extracted_binary=$(basename "$RELEASE_URL")
     debug_echo "[DEBUG] Found binary is $extracted_binary"
+  elif [[ "$script_mode" == "zip" ]]; then
+    # Downloading the resource and saving
+    debug_echo "[DEBUG] Downloading tool using zip mode"
+    curl -sL -o downloaded_resource "$RELEASE_URL"
+    unzip -d op downloaded_resource
+    rm -f downloaded_resource
+    # Let's find the find the executable with a max depth of 2
+    extracted_binary=$(find . -maxdepth 2 -type f -executable -print -quit)
+    debug_echo "[DEBUG] Found binary is $extracted_binary"
   fi
 
   # Installing the binary
