@@ -20,9 +20,10 @@
 | [kubectl](https://github.com/kubernetes/kubectl)          | Kubernetes command-line tool.                                     | 1.29.2  |
 | [kubectlxtra](https://github.com/alexbaeza/kubectlxtra)   | Wrapper around kubectl with additional functionalities.           | 1.0.0   |
 | [kustomize](https://github.com/kubernetes-sigs/kustomize) | Customization of Kubernetes YAML configurations.                  | 5.4.1   |
-| [opkustomize](https://github.com/alexbaeza/opkustomize)   | Wrapper around kustomize with additional functionalities.         | 1.0.0   |
+| [opkustomize](https://github.com/alexbaeza/opkustomize)   | Wrapper around kustomize with additional functionalities.         | 1.2.3   |
 | [helm](https://github.com/helm/helm)                      | Kubernetes package manager.                                       | 3.14.3  |
 | [kubeconform](https://github.com/yannh/kubeconform)       | Tool for validating Kubernetes YAML files against best practices. | 0.6.3   |
+| [1Password cli](https://github.com/yannh/kubeconform)     | 1Password CLI brings 1Password to your terminal.                  | 2.26.1  |
 
 ## Usage
 
