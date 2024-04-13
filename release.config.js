@@ -11,7 +11,8 @@ module.exports = {
                 "assets": ["CHANGELOG.md"],
                 "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }],
-        "semantic-release-docker-buildx", ["@semantic-release/github", {"addReleases": "bottom"}]
+        "semantic-release-docker-buildx",
+        ["@semantic-release/github", {"addReleases": "bottom"}]
     ],
     publish: [
         {
