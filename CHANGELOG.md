@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.1...v1.1.2) (2024-04-13)
+
+
+### Bug Fixes
+
+* **dependency:** Upgrade default opkustomize version to v1.2.1 ([2142215](https://github.com/alexbaeza/k8s-ci-cd/commit/2142215ac338225eacb6cf6f79f04473bf212c29))
+* **dependency:** Upgrade default opkustomize version to v1.2.2 ([22e16bf](https://github.com/alexbaeza/k8s-ci-cd/commit/22e16bf446facebddc5a581e086ec636a85064d8))
+
 ## [1.1.1](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.0...v1.1.1) (2024-04-13)
 
 
