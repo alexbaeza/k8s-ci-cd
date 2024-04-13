@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.3...v1.2.0) (2024-04-13)
+
+
+### Features
+
+* **1 password cli:** Add 1 password cli ([e9434fd](https://github.com/alexbaeza/k8s-ci-cd/commit/e9434fdfd2b942dbf2a5215e062b1ed58b14468a))
+* **1 password cli:** Add 1 password cli ([07ca238](https://github.com/alexbaeza/k8s-ci-cd/commit/07ca238649f0611e424dcbd89c1253494aa81e83))
+
 ## [1.1.3](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.2...v1.1.3) (2024-04-13)
 
 
