@@ -8,7 +8,9 @@
 [![Commits](https://img.shields.io/github/commit-activity/w/alexbaeza/k8s-ci-cd?style=flat)](https://github.com/alexbaeza/k8s-ci-cd/pulse)
 [![Issues](https://img.shields.io/github/issues/alexbaeza/k8s-ci-cd.svg?style=flat)](https://github.com/alexbaeza/k8s-ci-cd/issues)
 [![Releases](https://img.shields.io/github/v/release/alexbaeza/k8s-ci-cd.svg?style=flat)](https://github.com/alexbaeza/k8s-ci-cd/releases)
-
+[![Docker Pulls](https://img.shields.io/docker/pulls/betterdev/k8s-ci-cd?logo=docker&label=pulls)](https://hub.docker.com/r/betterdev/k8s-ci-cd/)
+[![Docker Stars](https://img.shields.io/docker/stars/betterdev/k8s-ci-cd?logo=docker&label=stars)](https://hub.docker.com/r/betterdev/k8s-ci-cd/)
+[![Docker Image Size](https://img.shields.io/docker/image-size/betterdev/k8s-ci-cd?logo=docker&label=size)](https://hub.docker.com/r/betterdev/k8s-ci-cd/)
 </div>
 
 ## Tools Included
