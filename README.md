@@ -96,3 +96,4 @@ docker build -t k8s-ci-cd \
 
 This Docker image is released under the [MIT License](LICENSE). Feel free to use and modify them
 according to your needs.
+
