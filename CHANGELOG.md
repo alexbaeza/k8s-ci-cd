@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.2.0...v1.2.1) (2024-04-14)
+
+
+### Bug Fixes
+
+* **deps:** opkustomize to latest version 1.3.0 ([0bc7c93](https://github.com/alexbaeza/k8s-ci-cd/commit/0bc7c937ec379190f2eeefdde27cb7d8869cecf6))
+
 # [1.2.0](https://github.com/alexbaeza/k8s-ci-cd/compare/v1.1.3...v1.2.0) (2024-04-13)
 
 
